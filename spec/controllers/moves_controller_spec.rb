@@ -24,7 +24,10 @@ describe MovesController do
   # Move. As you add validations to Move, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "mstar_id" => "1" }
+    { 
+      "mstar_id" => "1", 
+      "sequence" => "123" 
+    }
   end
 
   # This should return the minimal set of values that should be in the session
