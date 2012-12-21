@@ -24,6 +24,11 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
 
+group :development do
+  gem 'guard'
+  gem 'guard-rspec'
+end
+
 gem 'jquery-rails'
 gem 'haml-rails'
 
