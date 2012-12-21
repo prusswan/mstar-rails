@@ -35,6 +35,26 @@ describe Move do
       move.should be_valid
     end
 
+    it 'valid case 2' do
+      move.sequence = '[(0][)0]'
+      move.should be_valid
+    end
+
+    it 'valid case 3' do
+      move.sequence = '64428446464(4)66134()'
+      move.should be_valid
+    end    
+
+    it 'valid case 4' do
+      move.sequence = '()64428446464()(4)66134'
+      move.should be_valid
+    end
+
+    it 'valid case 5' do
+      move.sequence = '1 2 3 '
+      move.should be_valid
+    end
+
     it 'invalid case 1' do
       move.sequence = '(123()'
       move.should_not be_valid 
