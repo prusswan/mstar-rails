@@ -1,0 +1,14 @@
+/* Wingdings 3 web font from: http://code.google.com/p/libble/ */
+@font-face {
+  font-family: 'Wingdings 3';
+  src: url('Mstar.eot');
+  src: url('Mstar.eot?iefix') format('eot'),
+       url('Mstar.woff') format('woff'),
+       url('Mstar.otf') format('opentype'),
+       url('Mstar.svg') format('svg');
+}
+
+.sequence {
+  font-family: 'Wingdings 3', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+}
