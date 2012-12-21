@@ -4,5 +4,7 @@ class SongPartMove < ActiveRecord::Base
   belongs_to :song_part
   belongs_to :move
 
+  delegate :song, to: :song_part
+
   validates :order_id, uniqueness: { scope: :song_part_id }
 end
