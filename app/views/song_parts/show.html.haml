@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Song:
+  = "#{@song_part.song_id} (#{@song_part.song.title})"
+%p
+  %b Part:
+  = @song_part.part_id
+
+= link_to 'Edit', edit_song_part_path(@song_part)
+\|
+= link_to 'Back', song_parts_path

@@ -1,12 +1,9 @@
 require 'spec_helper'
 
 describe Move do
-  let(:move) { Move.new }
+  let(:move) { Move.new(mstar_id: 123, sequence: '123') }
 
   it 'should have a valid mstar_id' do
-    move.sequence = '123'
-    move.should_not be_valid
-
     move.mstar_id = 'asd'
     move.should_not be_valid
 
@@ -14,10 +11,12 @@ describe Move do
     move.should be_valid
   end
 
-  it 'should have a valid sequence' do
-    move.mstar_id = 124
+  it 'should have a unique mstar_id' do
+    Move.create(mstar_id: 123, sequence: '1')
     move.should_not be_valid
+  end
 
+  it 'should have a valid sequence' do
     move.sequence = 'abc'
     move.should_not be_valid
 
@@ -26,10 +25,6 @@ describe Move do
   end  
 
   describe 'advanced sequence validation' do
-    before do
-      move.mstar_id = 124
-    end
-
     it 'valid case 1' do
       move.sequence = '123()'
       move.should be_valid 

@@ -1,4 +1,7 @@
 MstarRails::Application.routes.draw do
+  resources :song_part_moves, path: :part_moves
+  resources :song_parts
+  resources :songs
   resources :moves
 
 

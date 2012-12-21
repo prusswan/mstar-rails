@@ -1,0 +1,23 @@
+%h1 Listing song_part_moves
+
+%table
+  %tr
+    %th Song part
+    %th Order
+    %th Move
+    %th
+    %th
+    %th
+
+  - @song_part_moves.each do |song_part_move|
+    %tr
+      %td= song_part_move.song_part.description
+      %td= song_part_move.order_id
+      %td= song_part_move.move.mstar_id
+      %td= link_to 'Show', song_part_move_path(song_part_move)
+      %td= link_to 'Edit', edit_song_part_move_path(song_part_move)
+      %td= link_to 'Destroy', song_part_move_path(song_part_move), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Song part move', new_song_part_move_path
