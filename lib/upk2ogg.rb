@@ -21,7 +21,7 @@ Dir.foreach(dir) do |filename|
 
   count = 0
   f.each_byte do |b|
-    # count += 1
+    count += 1
     char = b
 
     next if count < offset1
