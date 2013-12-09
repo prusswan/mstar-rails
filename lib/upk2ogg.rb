@@ -9,10 +9,10 @@ Dir.foreach(dir) do |filename|
   next unless filename =~ /^m_a.+\.upk$/
   # next unless filename == 'm_a3k_0197.upk' or filename == 'm_a1f_0001.upk'
 
-  out_file = "#{outdir}\\#{filename.gsub('upk','ogg')}"
+  out_file = File.join(outdir, filename.gsub('upk','ogg'))
   next if File.exist?(out_file)
 
-  f = File.open("#{dir}\\#{filename}", 'rb')
+  f = File.open(File.join(dir, filename), 'rb')
   out = File.new(out_file, 'wb')
 
   offset1 = 560 # 540
